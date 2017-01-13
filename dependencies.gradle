@@ -1,0 +1,31 @@
+ext {
+    // Build SDK versions
+    buildToolsVersion = '25.0.2'
+    minSdkVersion = 16
+    compileSdkVersion = 25
+    targetSdkVersion = 22
+
+    // Build settings
+    ci = 'true'.equals(System.getenv('CI'))
+
+    // Dependencies - Support Library
+    appCompat = 'com.android.support:appcompat-v7:24.0.0'
+    design = 'com.android.support:design:24.0.0'
+
+    // Dependencies - Dependency injection
+    butterknife = 'com.jakewharton:butterknife:8.0.1'
+    butterknifeCompiler = 'com.jakewharton:butterknife-compiler:8.0.1'
+    jsr250 = 'javax.annotation:jsr250-api:1.0'
+
+    // Dependencies - Network
+
+    // Dependencies - Rx
+    rxAndroid = 'io.reactivex:rxandroid:1.2.0'
+    rxBinding = 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    rxJava = 'io.reactivex:rxjava:1.1.5'
+    rxJavaDebug = 'io.reactivex:rxjava-debug:1.0.3'
+
+    // Dependencies - Test
+    assertjAndroid = 'com.squareup.assertj:assertj-android:1.1.1'
+    junit = 'junit:junit:4.12'
+}
