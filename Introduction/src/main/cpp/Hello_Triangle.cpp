@@ -232,7 +232,7 @@ void renderFrame() {
 
     glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
     checkGlError("glClear");
-    
+
     // Use the program object
     glUseProgram(*(triangleDataStorage->programObject));
     checkGlError("glUseProgram");
