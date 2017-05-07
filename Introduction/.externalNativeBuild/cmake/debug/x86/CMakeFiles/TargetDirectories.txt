@@ -1,3 +1,3 @@
-/Users/leejaegil/Documents/project/git/github/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/debug/x86/CMakeFiles/edit_cache.dir
-/Users/leejaegil/Documents/project/git/github/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
-/Users/leejaegil/Documents/project/git/github/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/debug/x86/CMakeFiles/native-lib.dir
+/Users/mugku/Documents/dev/git/github/android/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/debug/x86/CMakeFiles/edit_cache.dir
+/Users/mugku/Documents/dev/git/github/android/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/debug/x86/CMakeFiles/rebuild_cache.dir
+/Users/mugku/Documents/dev/git/github/android/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/debug/x86/CMakeFiles/Hello_Triangle.dir

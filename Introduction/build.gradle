@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
 apply plugin: 'me.tatarka.retrolambda'
 
+def platformVersion = 18    //openGLES 3 min Version
+//def platformVersion = 12 //openGLES 2 min version
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
@@ -12,9 +15,14 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        ndk {
+//            abiFilters 'x86', 'x86_64', 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+//        }
         externalNativeBuild {
             cmake {
-                cppFlags "-frtti -fexceptions"
+//                cppFlags "-frtti -fexceptions"
+                arguments "-DANDROID_PLATFORM_LEVEL=${platformVersion}",
+                        '-DANDROID_TOOLCHAIN=clang', '-DANDROID_STL=gnustl_static'
             }
         }
     }
@@ -48,7 +56,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path "CMakeLists.txt"
+            path "src/main/cpp/CMakeLists.txt"
         }
     }
 }

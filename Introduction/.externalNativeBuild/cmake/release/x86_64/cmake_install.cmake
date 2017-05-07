@@ -1,4 +1,4 @@
-# Install script for directory: /Users/leejaegil/Documents/project/git/github/AndroidOpenGLESSample/Introduction
+# Install script for directory: /Users/mugku/Documents/dev/git/github/android/AndroidOpenGLESSample/Introduction/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/leejaegil/Documents/project/git/github/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/mugku/Documents/dev/git/github/android/AndroidOpenGLESSample/Introduction/.externalNativeBuild/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
