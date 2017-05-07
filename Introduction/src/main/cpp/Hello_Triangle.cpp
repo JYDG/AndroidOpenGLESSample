@@ -60,25 +60,28 @@ public:
 
     }
 
-    GLuint getProgramObject(){
-        return programObject;
-    }
+    GLuint* programObject;
+    GLuint* gvPositionHandle;
 
-    GLuint getGvPositionHandle() {
-        return gvPositionHandle;
-    }
-
-    GLuint setProgramObject(GLuint val){
-        programObject = val;
-    }
-
-    GLuint setGvPositionHandle(GLuint val) {
-        gvPositionHandle = val;
-    }
+//    GLuint getProgramObject(){
+//        return programObject;
+//    }
+//
+//    GLuint getGvPositionHandle() {
+//        return gvPositionHandle;
+//    }
+//
+//    GLuint setProgramObject(GLuint val){
+//        programObject = val;
+//    }
+//
+//    GLuint setGvPositionHandle(GLuint val) {
+//        gvPositionHandle = val;
+//    }
 
 private:
-    GLuint programObject;
-    GLuint gvPositionHandle;
+//    GLuint programObject;
+//    GLuint gvPositionHandle;
 };
 
 //TriangleDataStorage::TriangleDataStorage() {
@@ -199,17 +202,16 @@ bool setupGraphics(int w, int h) {
 //    GLuint* positionHandle = triangleDataStorage->getGvPositionHandle();
 
     GLuint program = createProgram(vShaderStr, fShaderStr);
-    if (!program) {
-        LOGE("Could not create program.");
-        return false;
-    }
+    triangleDataStorage->programObject = &program;
+//    if (!program) {
+//        LOGE("Could not create program.");
+//        return false;
+//    }
 
     GLuint positionHandle = glGetAttribLocation(program, "vPosition");
+    triangleDataStorage->gvPositionHandle = &positionHandle;
     checkGlError("glGetAttribLocation");
     LOGI("glGetAttribLocation(\"vPosition\") = %d\n", positionHandle);
-
-    triangleDataStorage->setProgramObject(program);
-    triangleDataStorage->setGvPositionHandle(positionHandle);
 
     // Set the viewport
     glViewport(0, 0, w, h);
@@ -230,9 +232,9 @@ void renderFrame() {
 
     glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
     checkGlError("glClear");
-
+    
     // Use the program object
-    glUseProgram(triangleDataStorage->getProgramObject());
+    glUseProgram(*(triangleDataStorage->programObject));
     checkGlError("glUseProgram");
 
     // Load the vertex data
@@ -240,7 +242,7 @@ void renderFrame() {
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, vVertices);
     checkGlError("glVertexAttribPointer");
 
-    glEnableVertexAttribArray(triangleDataStorage->getGvPositionHandle());
+    glEnableVertexAttribArray(*(triangleDataStorage->gvPositionHandle));
     checkGlError("glEnableVertexAttribArray");
 
     glDrawArrays(GL_TRIANGLES, 0, 3);
